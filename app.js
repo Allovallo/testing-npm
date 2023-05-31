@@ -1,12 +1,15 @@
-const express = require('express');
+class Hero {
+    constructor(name) {
+        this._name = name;
+    }
 
-const app = express();
+    get name() {
+        return this._name;
+    }
 
-app.use('*', (req, res) => {
-    console.log('Отримано запит від браузера');
-    res.send('<h1>Це HTML тобі у відповідь</h1>')
-});
+    set name(newName) {
+        this._name = newName;
+    }
+}
 
-const listener = app.listen(4444, () => {
-    console.log(`Веб-сервер запущено на порті ${listener.address().port}`);
-});
+const h = new Hero('mango');
