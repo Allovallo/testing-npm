@@ -1,4 +1,12 @@
-const Joi = require('joi');
-const passwordSchema = Joi.string().min(3).max(10).alphanum();
+const express = require('express');
 
-console.log(passwordSchema.validate('q12345'));
+const app = express();
+
+app.use('*', (req, res) => {
+    console.log('Отримано запит від браузера');
+    res.send('<h1>Це HTML тобі у відповідь</h1>')
+});
+
+const listener = app.listen(4444, () => {
+    console.log(`Веб-сервер запущено на порті ${listener.address().port}`);
+});
