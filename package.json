@@ -5,12 +5,14 @@
   "main": "app.js",
   "scripts": {
     "app": "node app.js",
-    "build": "babel src -d lib"
+    "server": "node server.js",
+    "build": "babel src -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-env": "^7.22.4",
     "express": "^4.18.2",
     "joi": "^17.9.2",
     "shortid": "^2.2.16"
